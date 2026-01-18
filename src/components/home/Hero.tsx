@@ -3,6 +3,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
@@ -10,10 +11,10 @@ import { cn } from "@/lib/utils";
 gsap.registerPlugin(ScrollTrigger);
 
 const images = [
-    "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=2000&auto=format&fit=crop", // Greenhouse
-    "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=2000&auto=format&fit=crop", // Garden
-    "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=2000&auto=format&fit=crop", // Plants
-    "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2000&auto=format&fit=crop"  // Forest
+    "/images/hero-greenhouse.jpg", // Greenhouse
+    "/images/hero-garden.jpg", // Garden
+    "/images/hero-plants.jpg", // Plants
+    "/images/hero-forest.jpg"  // Forest
 ];
 
 export const Hero = () => {
@@ -93,12 +94,16 @@ export const Hero = () => {
                 </p>
 
                 <div className="hero-subtitle mt-12 flex gap-6">
-                    <button className="px-8 py-4 bg-white text-green-900 rounded-full font-bold hover:bg-stone-100 transition-colors uppercase tracking-widest text-sm">
-                        Explore Collection
-                    </button>
-                    <button className="px-8 py-4 border border-white text-white rounded-full font-bold hover:bg-white/10 transition-colors uppercase tracking-widest text-sm">
-                        Contact Us
-                    </button>
+                    <Link href="/gallery">
+                        <button className="px-8 py-4 bg-white text-green-900 rounded-full font-bold hover:bg-stone-100 transition-colors uppercase tracking-widest text-sm">
+                            Explore Collection
+                        </button>
+                    </Link>
+                    <Link href="/contact">
+                        <button className="px-8 py-4 border border-white text-white rounded-full font-bold hover:bg-white/10 transition-colors uppercase tracking-widest text-sm">
+                            Contact Us
+                        </button>
+                    </Link>
                 </div>
             </div>
 

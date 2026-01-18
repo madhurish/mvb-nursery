@@ -16,9 +16,14 @@ export const Footer = () => {
                 <div>
                     <h4 className="text-white font-bold mb-6">Quick Links</h4>
                     <ul className="space-y-3">
-                        {["Home", "About Us", "Our Collection", "Services", "Contact"].map(item => (
-                            <li key={item}>
-                                <Link href="#" className="hover:text-green-500 transition-colors">{item}</Link>
+                        {[
+                            { name: "Home", href: "/" },
+                            { name: "About Us", href: "/about" },
+                            { name: "Our Collection", href: "/gallery" },
+                            { name: "Contact", href: "/contact" }
+                        ].map(item => (
+                            <li key={item.name}>
+                                <Link href={item.href} className="hover:text-green-500 transition-colors">{item.name}</Link>
                             </li>
                         ))}
                     </ul>
@@ -29,7 +34,7 @@ export const Footer = () => {
                     <ul className="space-y-3">
                         {["Avenues", "Bamboos", "Bonsai", "Palms", "Fruit Plants"].map(item => (
                             <li key={item}>
-                                <Link href="#" className="hover:text-green-500 transition-colors">{item}</Link>
+                                <Link href="/gallery" className="hover:text-green-500 transition-colors">{item}</Link>
                             </li>
                         ))}
                     </ul>
